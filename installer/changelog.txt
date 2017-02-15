@@ -1,0 +1,4 @@
+GuitarAmp changelog
+www.e47.org
+
+2016/11/12 - v1.00 initial release
