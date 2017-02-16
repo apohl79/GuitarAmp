@@ -1483,7 +1483,7 @@
             startingLineNumber = "388"
             endingLineNumber = "388"
             landmarkName = "GuitarAmp::GuitarAmp(IPlugInstanceInfo instanceInfo)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1595,7 +1595,7 @@
             startingLineNumber = "386"
             endingLineNumber = "386"
             landmarkName = "GuitarAmp::GuitarAmp(IPlugInstanceInfo instanceInfo)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1611,7 +1611,7 @@
             startingLineNumber = "391"
             endingLineNumber = "391"
             landmarkName = "GuitarAmp::GuitarAmp(IPlugInstanceInfo instanceInfo)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1721,7 +1721,7 @@
             startingLineNumber = "374"
             endingLineNumber = "374"
             landmarkName = "GuitarAmp::GuitarAmp(IPlugInstanceInfo instanceInfo)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1833,7 +1833,7 @@
             startingLineNumber = "376"
             endingLineNumber = "376"
             landmarkName = "GuitarAmp::GuitarAmp(IPlugInstanceInfo instanceInfo)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

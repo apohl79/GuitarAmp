@@ -2703,9 +2703,11 @@
 			baseConfigurationReference = 4FCF15AF133124D1009A6277 /* GuitarAmp.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				BASE_SDK = macosx10.12;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
 				COPY_PHASE_STRIP = NO;
 				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_TARGET = 10.12;
 				EXECUTABLE_EXTENSION = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -2729,7 +2731,7 @@
 				INSTALL_OWNER = root;
 				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "$(ADDITIONAL_LIBRARY_PATHS)";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
@@ -2752,9 +2754,11 @@
 			baseConfigurationReference = 4FCF15AF133124D1009A6277 /* GuitarAmp.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				BASE_SDK = macosx10.12;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_TARGET = 10.12;
 				EXECUTABLE_EXTENSION = "";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = "$(RELEASE_OPTIMIZE)";
@@ -2779,7 +2783,7 @@
 				INSTALL_OWNER = root;
 				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "$(ADDITIONAL_LIBRARY_PATHS)";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"$(GCC_CFLAGS)",
@@ -2799,8 +2803,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LIBRARY = "libc++";
+				DEPLOYMENT_TARGET = 10.12;
 				DSTROOT = "$(VST_FOLDER)";
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
@@ -2812,6 +2818,8 @@
 					"$(inherited)",
 					/usr/local/Cellar/libsndfile/1.0.26/lib,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WARNING_CFLAGS = "-Wno-main";
 				WRAPPER_EXTENSION = vst;
@@ -2822,8 +2830,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LIBRARY = "libc++";
+				DEPLOYMENT_TARGET = 10.12;
 				DSTROOT = "$(VST_FOLDER)";
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
@@ -2835,6 +2845,8 @@
 					"$(inherited)",
 					/usr/local/Cellar/libsndfile/1.0.26/lib,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WARNING_CFLAGS = "-Wno-main";
 				WRAPPER_EXTENSION = vst;
@@ -2845,8 +2857,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LIBRARY = "libc++";
+				DEPLOYMENT_TARGET = 10.12;
 				DSTROOT = "$(VST_FOLDER)";
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
@@ -2858,6 +2872,8 @@
 					"$(inherited)",
 					/usr/local/Cellar/libsndfile/1.0.26/lib,
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WARNING_CFLAGS = "-Wno-main";
 				WRAPPER_EXTENSION = vst;
@@ -2869,10 +2885,11 @@
 			buildSettings = {
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				BASE_SDK = macosx10.11;
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "";
+				DEPLOYMENT_TARGET = 10.12;
 				DSTROOT = "$(AU_FOLDER)";
 				EXPORTED_SYMBOLS_FILE = GuitarAmp.exp;
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
@@ -2882,7 +2899,7 @@
 				);
 				INFOPLIST_FILE = "resources/GuitarAmp-AU-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-bundle";
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I $CA_SDK/AudioUnits/AUPublic/AUBase";
@@ -2891,6 +2908,7 @@
 					/System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers,
 					$CA_SDK/AudioUnits/AUPublic/AUBase,
 				);
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = component;
 			};
@@ -2901,10 +2919,11 @@
 			buildSettings = {
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				BASE_SDK = macosx10.11;
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "";
+				DEPLOYMENT_TARGET = 10.12;
 				DSTROOT = "$(AU_FOLDER)";
 				EXPORTED_SYMBOLS_FILE = GuitarAmp.exp;
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
@@ -2914,7 +2933,7 @@
 				);
 				INFOPLIST_FILE = "resources/GuitarAmp-AU-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-bundle";
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I $CA_SDK/AudioUnits/AUPublic/AUBase";
@@ -2923,6 +2942,7 @@
 					/System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers,
 					$CA_SDK/AudioUnits/AUPublic/AUBase,
 				);
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = component;
 			};
@@ -2933,10 +2953,11 @@
 			buildSettings = {
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				BASE_SDK = macosx10.11;
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "";
+				DEPLOYMENT_TARGET = 10.12;
 				DSTROOT = "$(AU_FOLDER)";
 				EXPORTED_SYMBOLS_FILE = GuitarAmp.exp;
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
@@ -2946,7 +2967,7 @@
 				);
 				INFOPLIST_FILE = "resources/GuitarAmp-AU-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-bundle";
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I $CA_SDK/AudioUnits/AUPublic/AUBase";
@@ -2955,6 +2976,7 @@
 					/System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers,
 					$CA_SDK/AudioUnits/AUPublic/AUBase,
 				);
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = component;
 			};
@@ -2964,14 +2986,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
-				BASE_SDK = macosx10.11;
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_TARGET = 10.12;
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = "$(DEBUG_OPTIMIZE)";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "AllOSX_32&64_intel";
 				SDKROOT = macosx;
@@ -2982,14 +3005,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
-				BASE_SDK = macosx10.11;
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_TARGET = 10.12;
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "AllOSX_32&64_intel";
 				SDKROOT = macosx;
@@ -3001,11 +3025,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
-				BASE_SDK = macosx10.11;
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				DEPLOYMENT_TARGET = 10.12;
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "AllOSX_32&64_intel";
 				SDKROOT = macosx;
@@ -3175,9 +3200,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "";
+				DEPLOYMENT_TARGET = 10.12;
 				DSTROOT = "$(VST3_FOLDER)";
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
@@ -3190,8 +3217,10 @@
 				);
 				INFOPLIST_FILE = "resources/GuitarAmp-VST3-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = YES;
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = vst3;
 			};
@@ -3201,9 +3230,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "";
+				DEPLOYMENT_TARGET = 10.12;
 				DSTROOT = "$(VST3_FOLDER)";
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
@@ -3216,8 +3247,10 @@
 				);
 				INFOPLIST_FILE = "resources/GuitarAmp-VST3-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = YES;
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = vst3;
 			};
@@ -3227,9 +3260,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "";
+				DEPLOYMENT_TARGET = 10.12;
 				DSTROOT = "$(VST3_FOLDER)";
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
@@ -3242,8 +3277,10 @@
 				);
 				INFOPLIST_FILE = "resources/GuitarAmp-VST3-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = YES;
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = vst3;
 			};
@@ -3407,11 +3444,12 @@
 				ADDITIONAL_INCLUDES = /usr/local/include;
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				BASE_SDK = macosx10.11;
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
+				DEPLOYMENT_TARGET = 10.12;
 				DSTROOT = "$(APP_FOLDER)";
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
@@ -3424,7 +3462,7 @@
 				);
 				INFOPLIST_FILE = "resources/GuitarAmp-OSXAPP-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -3446,11 +3484,12 @@
 				ADDITIONAL_INCLUDES = /usr/local/include;
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				BASE_SDK = macosx10.11;
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
+				DEPLOYMENT_TARGET = 10.12;
 				DSTROOT = "$(APP_FOLDER)";
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
@@ -3463,7 +3502,7 @@
 				);
 				INFOPLIST_FILE = "resources/GuitarAmp-OSXAPP-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -3485,11 +3524,12 @@
 				ADDITIONAL_INCLUDES = /usr/local/include;
 				ADDITIONAL_LIBRARY_PATHS = "/usr/local/lib /usr/local/Cellar/libsndfile/1.0.26/lib";
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				BASE_SDK = macosx10.11;
+				BASE_SDK = macosx10.12;
 				CERTIFICATE_ID = "Andreas Pohl";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
+				DEPLOYMENT_TARGET = 10.12;
 				DSTROOT = "$(APP_FOLDER)";
 				GCC_CFLAGS = "-Wno-write-strings -D_cdecl=";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = (
@@ -3502,7 +3542,7 @@
 				);
 				INFOPLIST_FILE = "resources/GuitarAmp-OSXAPP-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -3523,8 +3563,10 @@
 			baseConfigurationReference = 4FCF15AF133124D1009A6277 /* GuitarAmp.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				BASE_SDK = macosx10.12;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)";
 				DEPLOYMENT_LOCATION = YES;
+				DEPLOYMENT_TARGET = 10.12;
 				EXECUTABLE_EXTENSION = "";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = "$(RELEASE_OPTIMIZE)";
@@ -3547,7 +3589,7 @@
 				INSTALL_OWNER = root;
 				INSTALL_PATH = /;
 				LIBRARY_SEARCH_PATHS = "$(ADDITIONAL_LIBRARY_PATHS)";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"$(GCC_CFLAGS)",

@@ -51,7 +51,7 @@ APP=${APP//\APP_FOLDER = }/$PLUGIN_NAME.app
 PKG="installer/build-mac/$PLUGIN_NAME Installer.pkg"
 PKG_US="installer/build-mac/$PLUGIN_NAME Installer.unsigned.pkg"
 
-CERT_ID="Mac Developer: ap@diepohls.com (5D85N74XSN)"
+CERT_ID=""
 #CERT_ID=${CERT_ID//\CERTIFICATE_ID = }
 
 echo "making $PLUGIN_NAME version $FULL_VERSION mac distribution..."

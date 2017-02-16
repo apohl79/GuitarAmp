@@ -344,7 +344,7 @@ GuitarAmp::GuitarAmp(IPlugInstanceInfo instanceInfo)
     sb.Label = "Cabinet:";
     sb.LabelWidth = 75;
     sb.Menu = new IPopupMenu();
-    sb.InitIdx = 433;
+    sb.InitIdx = 25;
     const char* lastVendor = nullptr;
     const char* lastMic = nullptr;
     IPopupMenu* vendorMenu;
