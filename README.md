@@ -8,8 +8,8 @@ Features:
 ---------
 
 - VST2, VST3, AU and Standalone - all OS X only, sorry (feel free to port it, WDL supports windows too)
-- 600+ speaker/mic IR responses builtin
-- Load your own IR responses
+- Speaker/mic IRs by [Gregor Henning](www.grgr.de/index.html#ir) builtin
+- Load your own IRs
 - Based on [WDL-OL](https://github.com/olilarkin/wdl-ol)
 - Uses [Audio-Toolkit](http://www.audio-tk.com)
 - Tube model implemented as audio toolkit filter, see [here](https://github.com/apohl79/AudioTK/blob/Triode3Filter/ATK/Preamplifier/Triode3Filter.h) for the code
