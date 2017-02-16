@@ -8,7 +8,7 @@ Features:
 ---------
 
 - VST2, VST3, AU and Standalone - all OS X only, sorry (feel free to port it, WDL supports windows too)
-- Speaker/mic IRs by [Gregor Henning](www.grgr.de/index.html#ir) builtin
+- Builtin speaker/mic IRs by [Gregor Henning](www.grgr.de/index.html#ir)
 - Load your own IRs
 - Based on [WDL-OL](https://github.com/olilarkin/wdl-ol)
 - Uses [Audio-Toolkit](http://www.audio-tk.com)
