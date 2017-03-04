@@ -1,6 +1,50 @@
 #include "resource.h"
 
-KNOB_ID       PNG KNOB_FN
+
+/*
+Win port:
+embed images, required to load resources correctly via WDL/iPlug
+
+Embedding data into Windows resource file
+
+Under Windows, it can be desirable to embed the image (or other data) into the application resources instead of application code. One advantage of doing this is that the bitmap can be changed without recompilation, but relinking is still necessary. Another is that standard tools working with the resources can be used.
+
+A file can be included as RCDATA type. (Using the BITMAP leads to essential parts of the data being stripped, and this type would only be useful for .bmp files.) To add a file, add the following line to your .rc file:
+
+<PNG_BITMAP_NAME>	RCDATA		"<PNG file name>"
+*/
+
+101	PNG "resources/img/bg.png"
+
+102	PNG "resources/img/knob_3d_gray.png"
+103	PNG "resources/img/knob_3d_gray_small.png"
+
+104 PNG "resources/img/knob_3d_red.png"
+105	PNG "resources/img/knob_3d_red_small.png"
+106	PNG "resources/img/knob_3d_blue.png"
+107	PNG "resources/img/knob_3d_blue_small.png"
+
+108	PNG "resources/img/knob_3d_lightblue.png"
+109	PNG "resources/img/knob_3d_lightblue_small.png"
+
+110	PNG "resources/img/knob_3d_yellow.png"
+111	PNG "resources/img/knob_3d_yellow_small.png"
+
+112	PNG "resources/img/knob_3d_darkyellow.png"
+113	PNG "resources/img/knob_3d_darkyellow_small.png"
+
+114	PNG "resources/img/knob_3d_green.png"
+115	PNG "resources/img/knob_3d_green_small.png"
+
+116	PNG "resources/img/knob_3d_purple.png"
+117	PNG "resources/img/knob_3d_purple_small.png"
+
+
+118	PNG "resources/img/knob_69_black.png"
+119	PNG "resources/img/org_amp.png"
+120	PNG "resources/img/switch_toggle.png"
+
+
 
 #ifdef SA_API
 //Standalone stuff
