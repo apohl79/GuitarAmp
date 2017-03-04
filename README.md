@@ -16,7 +16,6 @@ Features:
 - Tube model based on a modefied version of [this](http://www.hs-ulm.de/opus/frontdoor.php?source_opus=114) thesis
 
  
-
 Windows port:
 -------------
 
@@ -28,7 +27,7 @@ NOTES:
 
 - usage:
 
-requires libsndfile-1.dll (32 or 64 bit, depending on plugin version) to be present on your computer
+requires libsndfile-1.dll (32 or 64 bit, depending on plugin version) to be present on your computer.
 64 bit version: C:\Windows\System32
 32bit version: C:\Windows\SysWow64
 (otherwise host will probably complain during scanning)
