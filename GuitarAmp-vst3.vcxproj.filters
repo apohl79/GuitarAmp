@@ -41,6 +41,7 @@
     <ClCompile Include="..\..\WDL\IPlug\IPlugVST3.cpp">
       <Filter>vst3</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\_libs\r8brain_ROOT\r8brain-free-src\r8bbase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GuitarAmp.h" />
@@ -141,6 +142,18 @@
     <ClInclude Include="..\..\WDL\IPlug\IPlugVST3.h">
       <Filter>vst3</Filter>
     </ClInclude>
+    <ClInclude Include="ATKDebugFilter.h" />
+    <ClInclude Include="ATKInputFilter.h" />
+    <ClInclude Include="ATKOutputFilter.h" />
+    <ClInclude Include="Controls.h" />
+    <ClInclude Include="Impulses.h" />
+    <ClInclude Include="IPlugEasy.h" />
+    <ClInclude Include="IPlugEasy.hpp" />
+    <ClInclude Include="LabeledKnob.h" />
+    <ClInclude Include="Layout.h" />
+    <ClInclude Include="PeakMeter.h" />
+    <ClInclude Include="..\..\..\_libs\r8brain_ROOT\r8brain-free-src\r8bbase.h" />
+    <ClInclude Include="SelectBox.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="vst3">
