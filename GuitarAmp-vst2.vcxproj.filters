@@ -5,6 +5,7 @@
     <ClCompile Include="..\..\WDL\IPlug\IPlugVST.cpp">
       <Filter>vst2</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\_libs\r8brain_ROOT\r8brain-free-src\r8bbase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GuitarAmp.h" />
@@ -12,6 +13,18 @@
     <ClInclude Include="..\..\WDL\IPlug\IPlugVST.h">
       <Filter>vst2</Filter>
     </ClInclude>
+    <ClInclude Include="Impulses.h" />
+    <ClInclude Include="LabeledKnob.h" />
+    <ClInclude Include="Layout.h" />
+    <ClInclude Include="PeakMeter.h" />
+    <ClInclude Include="SelectBox.h" />
+    <ClInclude Include="ATKDebugFilter.h" />
+    <ClInclude Include="ATKInputFilter.h" />
+    <ClInclude Include="ATKOutputFilter.h" />
+    <ClInclude Include="Controls.h" />
+    <ClInclude Include="IPlugEasy.h" />
+    <ClInclude Include="IPlugEasy.hpp" />
+    <ClInclude Include="..\..\..\_libs\r8brain_ROOT\r8brain-free-src\r8bbase.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GuitarAmp.rc" />

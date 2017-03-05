@@ -11,7 +11,9 @@
 #include <ATK/Core/OutPointerFilter.h>
 #include <cstring>
 #include <initializer_list>
+
 #include <sndfile.hh>
+
 #include <thread>
 #include <vector>
 
@@ -19,6 +21,7 @@ const int kNumPrograms = 1;
 const int kNumParams = 49;
 
 enum ELayout { kWidth = GUI_WIDTH, kHeight = GUI_HEIGHT, kFirst_X = 30, kFirst_Y = 30 };
+
 
 enum ImageIds {
     IMG_BG = IMG_RESSOURCE_BASE_ID,
@@ -43,28 +46,60 @@ enum ImageIds {
     IMG_SWITCH_TOGGLE,
 };
 
+
+// Win port: designated initializer list not working
+// http://forum.cockos.com/showthread.php?t=171616
+// replaced with 'standard' initialisers below
+
+/*
 const std::initializer_list<ImgDescriptor> gImageDescriptors = {
-    {.ID = IMG_BG, .FN = "resources/img/bg.png", .Frames = 0},
-    //{.ID = IMG_BG, .FN = "#202020", .Frames = 0},
-    {.ID = IMG_KNOB_GRAY, .FN = "resources/img/knob_3d_gray.png", .Frames = 64},
-    {.ID = IMG_KNOB_GRAY_SMALL, .FN = "resources/img/knob_3d_gray_small.png", .Frames = 64},
-    {.ID = IMG_KNOB_RED, .FN = "resources/img/knob_3d_red.png", .Frames = 64},
-    {.ID = IMG_KNOB_RED_SMALL, .FN = "resources/img/knob_3d_red_small.png", .Frames = 64},
-    {.ID = IMG_KNOB_BLUE, .FN = "resources/img/knob_3d_blue.png", .Frames = 64},
-    {.ID = IMG_KNOB_BLUE_SMALL, .FN = "resources/img/knob_3d_blue_small.png", .Frames = 64},
-    {.ID = IMG_KNOB_LIGHTBLUE, .FN = "resources/img/knob_3d_lightblue.png", .Frames = 64},
-    {.ID = IMG_KNOB_LIGHTBLUE_SMALL, .FN = "resources/img/knob_3d_lightblue_small.png", .Frames = 64},
-    {.ID = IMG_KNOB_YELLOW, .FN = "resources/img/knob_3d_yellow.png", .Frames = 64},
-    {.ID = IMG_KNOB_YELLOW_SMALL, .FN = "resources/img/knob_3d_yellow_small.png", .Frames = 64},
-    {.ID = IMG_KNOB_DARKYELLOW, .FN = "resources/img/knob_3d_darkyellow.png", .Frames = 64},
-    {.ID = IMG_KNOB_DARKYELLOW_SMALL, .FN = "resources/img/knob_3d_darkyellow_small.png", .Frames = 64},
-    {.ID = IMG_KNOB_GREEN, .FN = "resources/img/knob_3d_green.png", .Frames = 64},
-    {.ID = IMG_KNOB_GREEN_SMALL, .FN = "resources/img/knob_3d_green_small.png", .Frames = 64},
-    {.ID = IMG_KNOB_PURPLE, .FN = "resources/img/knob_3d_purple.png", .Frames = 64},
-    {.ID = IMG_KNOB_PURPLE_SMALL, .FN = "resources/img/knob_3d_purple_small.png", .Frames = 64},
-    {.ID = IMG_KNOB_69, .FN = "resources/img/knob_69_black.png", .Frames = 64},
-    {.ID = IMG_KNOB_ORG_AMP, .FN = "resources/img/org_amp.png", .Frames = 64},
-    {.ID = IMG_SWITCH_TOGGLE, .FN = "resources/img/switch_toggle.png", .Frames = 2},
+    {.ID = IMG_BG, .FN = "resources/img/bg.png",  0},
+    //{.ID = IMG_BG, .FN = "#202020",  0},
+    {.ID = IMG_KNOB_GRAY, .FN = "resources/img/knob_3d_gray.png",  64},
+    {.ID = IMG_KNOB_GRAY_SMALL, .FN = "resources/img/knob_3d_gray_small.png",  64},
+    {.ID = IMG_KNOB_RED, .FN = "resources/img/knob_3d_red.png",  64},
+    {.ID = IMG_KNOB_RED_SMALL, .FN = "resources/img/knob_3d_red_small.png",  64},
+    {.ID = IMG_KNOB_BLUE, .FN = "resources/img/knob_3d_blue.png",  64},
+    {.ID = IMG_KNOB_BLUE_SMALL, .FN = "resources/img/knob_3d_blue_small.png",  64},
+    {.ID = IMG_KNOB_LIGHTBLUE, .FN = "resources/img/knob_3d_lightblue.png",  64},
+    {.ID = IMG_KNOB_LIGHTBLUE_SMALL, .FN = "resources/img/knob_3d_lightblue_small.png",  64},
+    {.ID = IMG_KNOB_YELLOW, .FN = "resources/img/knob_3d_yellow.png",  64},
+    {.ID = IMG_KNOB_YELLOW_SMALL, .FN = "resources/img/knob_3d_yellow_small.png",  64},
+    {.ID = IMG_KNOB_DARKYELLOW, .FN = "resources/img/knob_3d_darkyellow.png",  64},
+    {.ID = IMG_KNOB_DARKYELLOW_SMALL, .FN = "resources/img/knob_3d_darkyellow_small.png",  64},
+    {.ID = IMG_KNOB_GREEN, .FN = "resources/img/knob_3d_green.png",  64},
+    {.ID = IMG_KNOB_GREEN_SMALL, .FN = "resources/img/knob_3d_green_small.png",  64},
+    {.ID = IMG_KNOB_PURPLE, .FN = "resources/img/knob_3d_purple.png",  64},
+    {.ID = IMG_KNOB_PURPLE_SMALL, .FN = "resources/img/knob_3d_purple_small.png",  64},
+    {.ID = IMG_KNOB_69, .FN = "resources/img/knob_69_black.png",  64},
+    {.ID = IMG_KNOB_ORG_AMP, .FN = "resources/img/org_amp.png",  64},
+    {.ID = IMG_SWITCH_TOGGLE, .FN = "resources/img/switch_toggle.png",  2},
+};
+*/
+
+
+const std::initializer_list<ImgDescriptor> gImageDescriptors = {
+	{IMG_BG, "resources/img/bg.png", 0 },
+	//{.ID = IMG_BG, .FN = "#202020",  0},
+	{IMG_KNOB_GRAY, "resources/img/knob_3d_gray.png", 64 },
+	{IMG_KNOB_GRAY_SMALL, "resources/img/knob_3d_gray_small.png", 64 },
+	{IMG_KNOB_RED, "resources/img/knob_3d_red.png", 64 },
+	{IMG_KNOB_RED_SMALL, "resources/img/knob_3d_red_small.png", 64 },
+	{IMG_KNOB_BLUE, "resources/img/knob_3d_blue.png", 64 },
+	{IMG_KNOB_BLUE_SMALL, "resources/img/knob_3d_blue_small.png", 64 },
+	{IMG_KNOB_LIGHTBLUE, "resources/img/knob_3d_lightblue.png", 64 },
+	{IMG_KNOB_LIGHTBLUE_SMALL, "resources/img/knob_3d_lightblue_small.png", 64 },
+	{IMG_KNOB_YELLOW, "resources/img/knob_3d_yellow.png", 64 },
+	{IMG_KNOB_YELLOW_SMALL, "resources/img/knob_3d_yellow_small.png", 64 },
+	{IMG_KNOB_DARKYELLOW, "resources/img/knob_3d_darkyellow.png", 64 },
+	{IMG_KNOB_DARKYELLOW_SMALL, "resources/img/knob_3d_darkyellow_small.png", 64 },
+	{IMG_KNOB_GREEN, "resources/img/knob_3d_green.png", 64 },
+	{IMG_KNOB_GREEN_SMALL, "resources/img/knob_3d_green_small.png", 64 },
+	{IMG_KNOB_PURPLE, "resources/img/knob_3d_purple.png", 64 },
+	{IMG_KNOB_PURPLE_SMALL, "resources/img/knob_3d_purple_small.png", 64 },
+	{IMG_KNOB_69, "resources/img/knob_69_black.png", 64 },
+	{IMG_KNOB_ORG_AMP, "resources/img/org_amp.png", 64 },
+	{IMG_SWITCH_TOGGLE, "resources/img/switch_toggle.png", 2 },
 };
 
 GuitarAmp::GuitarAmp(IPlugInstanceInfo instanceInfo)

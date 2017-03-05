@@ -25,6 +25,7 @@
 // make sure this is not the same as BUNDLE_MFR
 #define PLUG_MFR_ID 'xe47'
 
+
 // ProTools stuff
 
 #if (defined(AAX_API) || defined(RTAS_API)) && !defined(_PIDS_)
@@ -56,6 +57,7 @@ instrument determined by PLUG _IS _INST
 // GUI default dimensions
 #define GUI_WIDTH 800
 #define GUI_HEIGHT 303
+
 
 // on MSVC, you must define SA_API in the resource editor preprocessor macros as well as the c++ ones
 #if defined(SA_API) && !defined(OS_IOS)

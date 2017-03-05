@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <UsingTask TaskName="PaceFixLogs" AssemblyFile="$(PACE_FUSION_HOME)PaceFusionUi2013.dll" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -31,47 +31,48 @@
     <ProjectGuid>{2EB4846A-93E0-43A0-821E-12237105168F}</ProjectGuid>
     <RootNamespace>GuitarAmp</RootNamespace>
     <ProjectName>GuitarAmp-vst2</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Tracer|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Tracer|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -146,11 +147,19 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>$(VST_DEFS);$(DEBUG_DEFS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(AudioTKTriode3Filter_ROOT)\debug\32\include;$(r8brain_Root);$(libsndfile_ROOT)\libsndfile\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(AudioTKTriode3Filter_ROOT)\debug\32\lib;$(libsndfile_ROOT)\libsndfile\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(AudioTKTriode3Filter_ROOT)\debug\32\lib\ATKCore_static.lib;$(AudioTKTriode3Filter_ROOT)\debug\32\lib\ATKEQ_static.lib;$(AudioTKTriode3Filter_ROOT)\debug\32\lib\ATKTools_static.lib;$(AudioTKTriode3Filter_ROOT)\debug\32\lib\ATKSpecial_static.lib;$(AudioTKTriode3Filter_ROOT)\debug\32\lib\ATKPreamplifier_static.lib;$(AudioTKTriode3Filter_ROOT)\debug\32\lib\ATKUtility_static.lib;$(libsndfile_ROOT)\libsndfile\lib\libsndfile-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>echo Post-Build: copy 32bit binary to 32bit VST2 Plugins folder ... ...
+copy /y "$(TargetPath)" "$(VST2_32_PATH)\GuitarAmp.dll"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -158,11 +167,14 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>$(VST_DEFS);$(DEBUG_DEFS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(AudioTKTriode3Filter_ROOT)\debug\64\include;$(r8brain_Root);$(libsndfile_ROOT)\libsndfile_64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>$(x64_LIB_PATHS);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(x64_LIB_PATHS);$(AudioTKTriode3Filter_ROOT)\debug\64\lib;$(libsndfile_ROOT)\libsndfile_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(AudioTKTriode3Filter_ROOT)\debug\64\lib\ATKCore_static.lib;$(AudioTKTriode3Filter_ROOT)\debug\64\lib\ATKEQ_static.lib;$(AudioTKTriode3Filter_ROOT)\debug\64\lib\ATKTools_static.lib;$(AudioTKTriode3Filter_ROOT)\debug\64\lib\ATKSpecial_static.lib;$(AudioTKTriode3Filter_ROOT)\debug\64\lib\ATKPreamplifier_static.lib;$(AudioTKTriode3Filter_ROOT)\debug\64\lib\ATKUtility_static.lib;$(libsndfile_ROOT)\libsndfile_64\lib\libsndfile-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -174,13 +186,23 @@
       <PreprocessorDefinitions>$(VST_DEFS);$(RELEASE_DEFS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>$(AudioTKTriode3Filter_ROOT)\release\32\include;$(r8brain_Root);$(libsndfile_ROOT)\libsndfile\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(AudioTKTriode3Filter_ROOT)\release\32\lib;$(libsndfile_ROOT)\libsndfile\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(AudioTKTriode3Filter_ROOT)\release\32\lib\ATKCore_static.lib;$(AudioTKTriode3Filter_ROOT)\release\32\lib\ATKEQ_static.lib;$(AudioTKTriode3Filter_ROOT)\release\32\lib\ATKTools_static.lib;$(AudioTKTriode3Filter_ROOT)\release\32\lib\ATKSpecial_static.lib;$(AudioTKTriode3Filter_ROOT)\release\32\lib\ATKPreamplifier_static.lib;$(AudioTKTriode3Filter_ROOT)\release\32\lib\ATKUtility_static.lib;$(libsndfile_ROOT)\libsndfile\lib\libsndfile-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>echo Post-Build: copy 32bit binary to 32bit VST2 Plugins folder ... ...
+copy /y "$(TargetPath)" "$(VST2_32_PATH)\GuitarAmp.dll"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -191,13 +213,15 @@
       <PreprocessorDefinitions>$(VST_DEFS);$(RELEASE_DEFS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>$(AudioTKTriode3Filter_ROOT)\release\64\include;$(r8brain_Root);$(libsndfile_ROOT)\libsndfile_64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>$(x64_LIB_PATHS);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(AudioTKTriode3Filter_ROOT)\release\64\lib;$(libsndfile_ROOT)\libsndfile_64\lib;$(x64_LIB_PATHS);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(AudioTKTriode3Filter_ROOT)\release\64\lib\ATKCore_static.lib;$(AudioTKTriode3Filter_ROOT)\release\64\lib\ATKEQ_static.lib;$(AudioTKTriode3Filter_ROOT)\release\64\lib\ATKTools_static.lib;$(AudioTKTriode3Filter_ROOT)\release\64\lib\ATKSpecial_static.lib;$(AudioTKTriode3Filter_ROOT)\release\64\lib\ATKPreamplifier_static.lib;$(AudioTKTriode3Filter_ROOT)\release\64\lib\ATKUtility_static.lib;$(libsndfile_ROOT)\libsndfile_64\lib\libsndfile-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Tracer|Win32'">
@@ -208,13 +232,15 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>$(VST_DEFS);$(TRACER_DEFS);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>H:\_DEV_WIP\2015\REAPER_VST\_libs\AudioTKTriode3Filter_root\32\include;H:\_DEV_WIP\2015\REAPER_VST\_libs\r8brain-free-src-master;H:\_DEV_WIP\2015\REAPER_VST\_libs\libsndfile\include;H:\_DEV_WIP\2015\REAPER_VST\_libs\AudioTKTriode3Filter_build_ROOT\include;%(AdditionalIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>$(WDL_PATH)\lice\build-win\$(Platform)\Release\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>H:\_DEV_WIP\2015\REAPER_VST\_libs\libsndfile\include;H:\_DEV_WIP\2015\REAPER_VST\_libs\AudioTKTriode3Filter_root\32;H:\_DEV_WIP\2015\REAPER_VST\_libs\r8brain-free-src-master\libs\Win32;H:\_DEV_WIP\2015\REAPER_VST\_libs\AudioTKTriode3Filter_build_ROOT\lib;H:\_DEV_WIP\2015\REAPER_VST\_libs\libsndfile\lib;%(AdditionalLibraryDirectories);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>r8bsrc.lib;libsndfile-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Tracer|x64'">
@@ -235,11 +261,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\_libs\r8brain_ROOT\r8brain-free-src\r8bbase.h" />
     <ClInclude Include="..\..\WDL\IPlug\IPlugVST.h" />
+    <ClInclude Include="ATKDebugFilter.h" />
+    <ClInclude Include="ATKInputFilter.h" />
+    <ClInclude Include="ATKOutputFilter.h" />
+    <ClInclude Include="Controls.h" />
     <ClInclude Include="GuitarAmp.h" />
+    <ClInclude Include="Impulses.h" />
+    <ClInclude Include="IPlugEasy.h" />
+    <ClInclude Include="IPlugEasy.hpp" />
+    <ClInclude Include="LabeledKnob.h" />
+    <ClInclude Include="Layout.h" />
+    <ClInclude Include="PeakMeter.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SelectBox.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\_libs\r8brain_ROOT\r8brain-free-src\r8bbase.cpp" />
     <ClCompile Include="..\..\WDL\IPlug\IPlugVST.cpp" />
     <ClCompile Include="GuitarAmp.cpp" />
   </ItemGroup>
